@@ -14,13 +14,15 @@
 12. Install flask-sqlalchemy for database
 13. Define child classes using database models 
 
+## Add user login
 
-Add password setting and hashing to user class
-install flask-login
-make login object of class LoginManager
-inherit user class from UserMixin from flask_login
-add user_loader decorator and load_user function to models.py
-login user by querying database for username and checking password
-url redirect to page originally requested by logging in user
-add @login_required decorator from flask_login to pages that require login
-Add to html
+1. Add password setting and hashing to user class
+2. install flask-login
+3. make login object of class LoginManager
+4. inherit user class from UserMixin from flask_login
+5. add user_loader decorator and load_user function to models.py
+6. login user by querying database for username and checking password
+7. url redirect to page originally requested by logging in user
+8. add @login_required decorator from flask_login to pages that require login
+9. Update html to add login / logout links to pages
+10. Add logout function
