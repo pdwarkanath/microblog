@@ -111,3 +111,8 @@ Traceback (most recent call last):
 AssertionError: The message does not specify a sender and a default sender has not been configured
 2019-01-15 13:10:29,804 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
 2019-01-15 13:11:38,035 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
+2019-01-16 08:47:09,705 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
+2019-01-16 08:49:57,648 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
+2019-01-16 08:51:18,903 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
+2019-01-16 08:54:24,212 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
+2019-01-16 08:58:20,771 INFO: Microblog startup [in c:\microblog\app\__init__.py:46]
