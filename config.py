@@ -16,4 +16,4 @@ class Config(object):
     ADMINS = ['splashprabhu@gmail.com']
 
 
-    POSTS_PER_PAGE = 20
+    POSTS_PER_PAGE = 3
