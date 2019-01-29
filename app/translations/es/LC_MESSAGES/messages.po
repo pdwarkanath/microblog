@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-01-26 18:06-0600\n"
+"POT-Creation-Date: 2019-01-29 16:35-0600\n"
 "PO-Revision-Date: 2019-01-26 18:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -88,7 +88,7 @@ msgstr "Nueva Contraseña"
 msgid "Your post is now live!"
 msgstr "¡Tu artículo ha sido publicado!"
 
-#: app/routes.py:33 app/templates/base.html:29
+#: app/routes.py:33 app/templates/base.html:30
 msgid "Home"
 msgstr "Inicio"
 
@@ -131,7 +131,7 @@ msgstr "¡No te puedes dejar de seguir a tí mismo!"
 msgid "You are no longer following %(username)s!"
 msgstr "No estás siguiendo a %(username)s."
 
-#: app/routes.py:158 app/templates/base.html:30
+#: app/routes.py:158 app/templates/base.html:31
 msgid "Explore"
 msgstr "Explorar"
 
@@ -164,11 +164,11 @@ msgstr "El administrador ha sido notificado. ¡Lamentamos la inconveniencia!"
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s dijo %(when)s"
 
-#: app/templates/base.html:34
+#: app/templates/base.html:35
 msgid "Login"
 msgstr "Ingresar"
 
-#: app/templates/base.html:37
+#: app/templates/base.html:38
 msgid "Logout"
 msgstr "Salir"
 
