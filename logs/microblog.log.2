@@ -1,73 +1,4 @@
-2019-01-13 04:40:46,532 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-13 04:41:43,673 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-13 04:48:23,001 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-14 03:40:15,110 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-14 03:40:53,425 ERROR: Exception on /explore [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\microblog\app\routes.py", line 136, in explore
-    return render_template('index.html', title = 'Explore', posts = posts)
-  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\microblog\app\templates\index.html", line 2, in top-level template code
-    {% extends "base.html" %}
-  File "C:\microblog\app\templates\base.html", line 32, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\microblog\app\templates\index.html", line 21, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2019-01-14 03:41:23,592 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-14 04:17:41,193 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-14 04:30:01,264 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-14 04:30:08,622 ERROR: Exception on /user/dwarkanath [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\microblog\app\routes.py", line 78, in user
-    posts = user.posts.order_by(Post.datetime.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
-AttributeError: type object 'Post' has no attribute 'datetime'
-2019-01-14 04:30:52,718 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-14 04:32:12,311 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-14 04:32:50,609 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-15 11:00:47,831 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-15 11:14:16,284 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-15 13:01:01,733 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-15 13:01:52,016 ERROR: Exception on /reset_password_request [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-01-15 13:01:54,925 ERROR: Exception on /reset_password_request [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -124,3 +55,61 @@ Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2019-01-15 13:01:56,690 ERROR: Exception on /reset_password_request [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\microblog\app\routes.py", line 170, in reset_password_request
+    return render_template('reset_password_request.html', title = 'Reset Password', form = form)
+  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\microblog\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\microblog\app\templates\reset_password_request.html", line 11, in template
+    {% endfor %}
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 144, in parse_statement
+    self.fail_unknown_tag(token.value, token.lineno)
+  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 97, in fail_unknown_tag
+    return self._fail_ut_eof(name, self._end_token_stack, lineno)
+  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2019-01-15 13:03:34,402 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]

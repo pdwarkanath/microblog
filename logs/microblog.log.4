@@ -1,4 +1,11 @@
-2019-01-11 05:12:03,862 ERROR: Exception on /follow/dwarkanath [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-01-13 04:33:40,547 ERROR: Exception on / [POST] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1831, in add
+    state = attributes.instance_state(instance)
+AttributeError: type object 'Post' has no attribute '_sa_instance_state'
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,11 +21,17 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\microblog\app\routes.py", line 103, in follow
-    user = User.query.filter_by(username = username.data).first()
-AttributeError: 'str' object has no attribute 'data'
-2019-01-11 05:13:54,792 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-11 05:14:03,837 ERROR: Exception on /follow/dwarkanath [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+  File "C:\microblog\app\routes.py", line 18, in index
+    db.session.add(Post)
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1833, in add
+    raise exc.UnmappedInstanceError(instance)
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'flask_sqlalchemy.model.DefaultMeta' is not mapped; was a class (app.models.Post) supplied where an instance was required?
+2019-01-13 04:34:24,355 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
+2019-01-13 04:37:59,665 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
+2019-01-13 04:39:12,800 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
+2019-01-13 04:39:16,610 ERROR: Exception on /user/dwarkanath [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -34,70 +47,32 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\microblog\app\routes.py", line 103, in follow
-    user = User.query.filter_by(username = username.data).first()
-AttributeError: 'str' object has no attribute 'data'
-2019-01-11 05:15:25,889 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-13 04:25:55,080 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-13 04:26:12,098 ERROR: Exception on / [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\microblog\app\routes.py", line 25, in index
-    return render_template('index.html', title='Home Page', posts = posts, form = form)
-  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "c:\microblog\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
+  File "C:\microblog\app\routes.py", line 73, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
   File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "c:\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\microblog\app\templates\index.html", line 9, in template
-    {{} form.post.label }}<br>
-  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "c:\microblog\venv\lib\site-packages\jinja2\parser.py", line 874, in subparse
-    next(self.stream)
-  File "c:\microblog\venv\lib\site-packages\jinja2\lexer.py", line 359, in __next__
-    self.current = next(self._iter)
-  File "c:\microblog\venv\lib\site-packages\jinja2\lexer.py", line 562, in wrap
-    for lineno, token, value in stream:
-  File "c:\microblog\venv\lib\site-packages\jinja2\lexer.py", line 683, in tokeniter
-    filename)
-jinja2.exceptions.TemplateSyntaxError: unexpected '}'
-2019-01-13 04:27:10,606 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-13 04:27:40,146 ERROR: Exception on /index [POST] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+  File "C:\microblog\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\microblog\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\microblog\app\templates\user.html", line 33, in block "content"
+    {% include '_post.html' %}
+  File "C:\microblog\app\templates\_post.html", line 4, in top-level template code
+    <td><a href="{{url_for(user, username = post.author.username)}}">{{ post.author.username }}</a> says: <b>{{ post.body }}</b></td>
+  File "c:\microblog\venv\lib\site-packages\flask\helpers.py", line 305, in url_for
+    if endpoint[:1] == '.':
+TypeError: 'User' object is not subscriptable
+2019-01-13 04:39:17,964 ERROR: Exception on /index [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -113,21 +88,30 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\microblog\app\routes.py", line 17, in index
-    if form.validate_on_submit():
-  File "c:\microblog\venv\lib\site-packages\flask_wtf\form.py", line 101, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "c:\microblog\venv\lib\site-packages\wtforms\form.py", line 310, in validate
-    return super(Form, self).validate(extra)
-  File "c:\microblog\venv\lib\site-packages\wtforms\form.py", line 152, in validate
-    if not field.validate(self, extra):
-  File "c:\microblog\venv\lib\site-packages\wtforms\fields\core.py", line 206, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "c:\microblog\venv\lib\site-packages\wtforms\fields\core.py", line 226, in _run_validation_chain
-    validator(form, self)
-TypeError: __init__() takes from 1 to 2 positional arguments but 3 were given
-2019-01-13 04:31:57,353 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
-2019-01-13 04:32:05,078 ERROR: Exception on / [POST] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+  File "C:\microblog\app\routes.py", line 24, in index
+    return render_template('index.html', title='Home Page', posts = posts, form = form)
+  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\microblog\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "C:\microblog\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\microblog\app\templates\index.html", line 19, in block "content"
+    <div><p><a href="{{url_for(user, username = post.author.username)}}">{{ post.author.username }}</a> says: <b>{{ post.body }}</b></p></div>
+  File "c:\microblog\venv\lib\site-packages\flask\helpers.py", line 305, in url_for
+    if endpoint[:1] == '.':
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2019-01-13 04:39:21,396 ERROR: Exception on /index [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -143,7 +127,26 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\microblog\app\routes.py", line 17, in index
-    post = Post(body = form.post.data, author=current_user)
-NameError: name 'Post' is not defined
-2019-01-13 04:33:32,936 INFO: Microblog startup [in C:\microblog\app\__init__.py:44]
+  File "C:\microblog\app\routes.py", line 24, in index
+    return render_template('index.html', title='Home Page', posts = posts, form = form)
+  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\microblog\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "C:\microblog\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\microblog\app\templates\index.html", line 19, in block "content"
+    <div><p><a href="{{url_for(user, username = post.author.username)}}">{{ post.author.username }}</a> says: <b>{{ post.body }}</b></p></div>
+  File "c:\microblog\venv\lib\site-packages\flask\helpers.py", line 305, in url_for
+    if endpoint[:1] == '.':
+jinja2.exceptions.UndefinedError: 'user' is undefined

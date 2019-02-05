@@ -8,7 +8,7 @@ from app.models import User, Post
 from datetime import datetime
 from app.email import send_password_reset_email
 from flask_babel import _, get_locale
-from guess_language import guess_language
+from google.cloud import translate
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
@@ -16,7 +16,8 @@ from guess_language import guess_language
 def index():
 	form = PostForm()
 	if form.validate_on_submit():
-		language = guess_language(form.post.data)
+		translate_client = translate.Client()
+		language = translate_client.detect_language(form.post.data)['language']
 		if language == 'UNKNOWN' or len(language) > 5:
 			language = ''
 		post = Post(body = form.post.data, author=current_user)

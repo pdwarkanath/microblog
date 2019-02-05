@@ -1,4 +1,4 @@
-2019-01-15 13:03:44,236 ERROR: Exception on /reset_password_request [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-02-05 03:29:19,920 ERROR: Exception on / [POST] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,107 +12,14 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\microblog\app\routes.py", line 170, in reset_password_request
-    return render_template('reset_password_request.html', title = 'Reset Password', form = form)
-  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\microblog\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\microblog\app\templates\reset_password_request.html", line 1, in top-level template code
-    {% extends base.html %}
-  File "c:\microblog\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'base' is undefined
-2019-01-15 13:04:32,437 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-15 13:04:50,401 ERROR: Exception on /reset_password_request [POST] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\microblog\app\routes.py", line 167, in reset_password_request
-    send_password_reset_email(user)
-  File "C:\microblog\app\email.py", line 26, in send_password_reset_email
-    send_email(subject, sender, recipients, text_body, html_body)
-  File "C:\microblog\app\email.py", line 13, in send_email
-    msg = mail(subject, sender, recipients)
-TypeError: 'Mail' object is not callable
-2019-01-15 13:06:14,512 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-15 13:06:27,081 ERROR: Exception on /reset_password_request [POST] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\microblog\app\routes.py", line 167, in reset_password_request
-    send_password_reset_email(user)
-  File "C:\microblog\app\email.py", line 26, in send_password_reset_email
-    send_email(subject, sender, recipients, text_body, html_body)
-  File "C:\microblog\app\email.py", line 16, in send_email
-    mail.send(msg)
-  File "c:\microblog\venv\lib\site-packages\flask_mail.py", line 492, in send
-    message.send(connection)
-  File "c:\microblog\venv\lib\site-packages\flask_mail.py", line 427, in send
-    connection.send(self)
-  File "c:\microblog\venv\lib\site-packages\flask_mail.py", line 178, in send
-    "The message does not specify a sender and a default sender "
-AssertionError: The message does not specify a sender and a default sender has not been configured
-2019-01-15 13:07:47,057 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-15 13:07:57,763 ERROR: Exception on /reset_password_request [POST] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\microblog\app\routes.py", line 167, in reset_password_request
-    send_password_reset_email(user)
-  File "C:\microblog\app\email.py", line 26, in send_password_reset_email
-    send_email(subject, sender=sender, recipients=recipients, text_body=text_body, html_body =html_body)
-  File "C:\microblog\app\email.py", line 16, in send_email
-    mail.send(msg)
-  File "c:\microblog\venv\lib\site-packages\flask_mail.py", line 492, in send
-    message.send(connection)
-  File "c:\microblog\venv\lib\site-packages\flask_mail.py", line 427, in send
-    connection.send(self)
-  File "c:\microblog\venv\lib\site-packages\flask_mail.py", line 178, in send
-    "The message does not specify a sender and a default sender "
-AssertionError: The message does not specify a sender and a default sender has not been configured
-2019-01-15 13:10:29,804 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-15 13:11:38,035 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-16 08:47:09,705 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-16 08:49:57,648 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-16 08:51:18,903 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-16 08:54:24,212 INFO: Microblog startup [in C:\microblog\app\__init__.py:46]
-2019-01-16 08:58:20,771 INFO: Microblog startup [in c:\microblog\app\__init__.py:46]
+  File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\routes.py", line 20, in index
+    language = translate_client.detect_language(form.post.data)[0]['language']
+KeyError: 0
+2019-02-05 03:30:01,262 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
+2019-02-05 03:31:26,544 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
+2019-02-05 03:36:02,416 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
+2019-02-05 03:37:20,460 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
+2019-02-05 03:37:57,514 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
+2019-02-05 03:39:34,591 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
