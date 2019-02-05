@@ -1,2 +1,5 @@
 app.db
 venv/
+microblog-53e8b5e2a8f3.json
+.flaskenv
+envvars.bat
