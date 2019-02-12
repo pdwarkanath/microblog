@@ -9,6 +9,8 @@ from datetime import datetime
 from app.email import send_password_reset_email
 from flask_babel import _, get_locale
 from google.cloud import translate
+from flask import jsonify
+from app.translate import translate_text
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
@@ -191,4 +193,10 @@ def reset_password(token):
 		flash(_('Your password has been reset.'))
 		return redirect(url_for('login'))
 	return render_template('reset_password.html', form = form)
+
+@app.route('/translate', methods=['POST'])
+def translate_post():
+	return jsonify(translate_text(request.form['text'],request.form['dest_language']))
+
+
 

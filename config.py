@@ -15,6 +15,6 @@ class Config(object):
     
     ADMINS = ['splashprabhu@gmail.com']
 
-    #GOOGLE_APPLICATION_CREDENTIALS = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
+    GOOGLE_APPLICATION_CREDENTIALS = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
     POSTS_PER_PAGE = 3
     LANGUAGES = ['en', 'es']

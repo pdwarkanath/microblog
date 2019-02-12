@@ -8,5 +8,5 @@ def translate_text(text, dest_language):
 	translate_client = translate.Client()
 
 	translation = translate_client.translate(text, target_language=dest_language)
-	return translation['translatedText']
+	return translation
 
