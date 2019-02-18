@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, request, url_for, g
+from flask import render_template, flash, redirect, request, url_for, g, jsonify
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, ResetPasswordRequestForm, ResetPasswordForm
 import time
@@ -9,7 +9,6 @@ from datetime import datetime
 from app.email import send_password_reset_email
 from flask_babel import _, get_locale
 from google.cloud import translate
-from flask import jsonify
 from app.translate import translate_text
 
 @app.route('/', methods=['GET', 'POST'])
