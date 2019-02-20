@@ -13,13 +13,13 @@
 		{% endif %}
 		<p>{{ user.followers.count() }} {{ _('followers') }}, {{ user.followed.count() }} {{ _('following') }}.</p>
 		{% if user == current_user %}
-			<p><a href = {{ url_for('edit_profile') }}>{{ _('Edit your profile') }}</a></p> 
+			<p><a href = {{ url_for('main.edit_profile') }}>{{ _('Edit your profile') }}</a></p> 
 		{% elif not current_user.is_following(user) %} 
-			<form action={{ url_for('follow', username = user.username) }}>
+			<form action={{ url_for('main.follow', username = user.username) }}>
 				<button type="submit">{{ _('Follow') }}</button>
 			</form>
 		{% else %}
-			<form action={{ url_for('unfollow', username = user.username) }}>
+			<form action={{ url_for('main.unfollow', username = user.username) }}>
 				<button type="submit">{{ _('Unfollow') }}</button>
 			</form>
 		{% endif %}

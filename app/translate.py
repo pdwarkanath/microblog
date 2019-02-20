@@ -1,9 +1,9 @@
 from google.cloud import translate
 from flask_babel import _
-from app import app
+from flask import current_app
 
 def translate_text(text, dest_language):
-	if 'GOOGLE_APPLICATION_CREDENTIALS' not in app.config or not app.config['GOOGLE_APPLICATION_CREDENTIALS']:
+	if 'GOOGLE_APPLICATION_CREDENTIALS' not in current_app.config or not current_app.config['GOOGLE_APPLICATION_CREDENTIALS']:
 		return _('Error: the translation service is not configured.')
 	translate_client = translate.Client()
 

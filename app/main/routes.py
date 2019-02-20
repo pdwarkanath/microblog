@@ -1,17 +1,17 @@
 from flask import render_template, flash, redirect, request, url_for, g, jsonify, current_app
-from app import app, db
+from app import db
 from app.main.forms import EditProfileForm, PostForm
-
+from datetime import datetime
 from flask_login import current_user, login_required
 from app.models import User, Post
 from datetime import datetime
-from app.email import send_password_reset_email
+from app.auth.email import send_password_reset_email
 from flask_babel import _, get_locale
 from google.cloud import translate
 from app.translate import translate_text
 from app.main import bp
 
-@bp.before_request
+@bp.before_app_request
 def before_request():
 	if current_user.is_authenticated:
 		current_user.last_seen = datetime.utcnow()
@@ -35,7 +35,7 @@ def index():
 		flash(_('Your post is now live!'))
 		return redirect(url_for('main.index'))
 	page = request.args.get('page', 1, type = int)
-	posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
+	posts = current_user.followed_posts().paginate(page, current_app.config['POSTS_PER_PAGE'], False)
 	if posts.has_next:
 		next_url = url_for('main.index', page = posts.next_num)
 	else:
@@ -53,7 +53,7 @@ def index():
 def user(username):
 	user = User.query.filter_by(username=username).first_or_404()
 	page = request.args.get('page', 1, type = int)
-	posts = user.posts.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
+	posts = user.posts.order_by(Post.timestamp.desc()).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
 	if posts.has_next:
 		next_url = url_for('main.user', username = username, page = posts.next_num)
 	else:
@@ -118,13 +118,18 @@ def unfollow(username):
 @login_required
 def explore():
 	page = request.args.get('page', 1, type = int)
-	posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
+	posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
 	if posts.has_next:
-		next_url = url_for('main.index', page = posts.next_num)
+		next_url = url_for('main.explore', page = posts.next_num)
 	else:
 		next_url = None
 	if posts.has_prev:
-		prev_url = url_for('main.index', page = posts.prev_num)
+		prev_url = url_for('main.explore', page = posts.prev_num)
 	else:
 		prev_url = None
 	return render_template('index.html', title = _('Explore'), posts = posts.items, next_url = next_url, prev_url = prev_url)
+
+@bp.route('/translate', methods=['POST'])
+@login_required
+def translate_post():
+	return jsonify(translate_text(request.form['text'], request.form['dest_language']))
