@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-02-20 01:36-0600\n"
+"POT-Creation-Date: 2019-02-23 20:42-0600\n"
 "PO-Revision-Date: 2019-01-26 18:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: app/__init__.py:20
+#: app/__init__.py:21
 msgid "Please log in to access this page."
 msgstr "Por favor ingrese para acceder a esta página."
 
@@ -30,7 +30,7 @@ msgstr "Error: el servicio de traducción no está configurado."
 msgid "[Microblog] Reset Your Password"
 msgstr "[Microblog] Nueva Contraseña"
 
-#: app/auth/forms.py:8 app/auth/forms.py:15 app/main/forms.py:9
+#: app/auth/forms.py:8 app/auth/forms.py:15 app/main/forms.py:11
 msgid "Username"
 msgstr "Nombre de usuario"
 
@@ -59,7 +59,7 @@ msgstr "Repetir Contraseña"
 msgid "Register"
 msgstr "Registrarse"
 
-#: app/auth/forms.py:24 app/main/forms.py:21
+#: app/auth/forms.py:24 app/main/forms.py:23
 msgid "Please use a different username"
 msgstr "Por favor use un nombre de usuario diferente."
 
@@ -67,7 +67,7 @@ msgstr "Por favor use un nombre de usuario diferente."
 msgid "Please use a different email"
 msgstr "Por favor use una dirección de email diferente."
 
-#: app/auth/forms.py:35 app/main/forms.py:11
+#: app/auth/forms.py:35 app/main/forms.py:13
 msgid "Submit"
 msgstr "Enviar"
 
@@ -94,58 +94,62 @@ msgstr "Busca en tu email las instrucciones para crear una nueva contraseña"
 msgid "Your password has been reset."
 msgstr "Tu contraseña ha sido cambiada."
 
-#: app/main/forms.py:10
+#: app/main/forms.py:12
 msgid "About Me"
 msgstr "Acerca de mí"
 
-#: app/main/forms.py:24
+#: app/main/forms.py:26
 msgid "Say Something"
 msgstr "Dí algo"
 
-#: app/main/forms.py:25
+#: app/main/forms.py:27
 msgid "Post"
 msgstr "Enviar"
 
-#: app/main/routes.py:35
+#: app/main/forms.py:31 app/main/routes.py:150
+msgid "Search"
+msgstr "Buscar"
+
+#: app/main/routes.py:37
 msgid "Your post is now live!"
 msgstr "¡Tu artículo ha sido publicado!"
 
-#: app/main/routes.py:47 app/templates/base.html:44
+#: app/main/routes.py:49 app/templates/base.html:44
 msgid "Home"
 msgstr "Inicio"
 
-#: app/main/routes.py:78
+#: app/main/routes.py:80
 msgid "Your changes have been saved."
 msgstr "Tus cambios han sido salvados."
 
-#: app/main/routes.py:83 app/templates/edit_profile.html:5
+#: app/main/routes.py:85 app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: app/main/routes.py:91 app/main/routes.py:107
+#: app/main/routes.py:93 app/main/routes.py:109
 #, python-format
 msgid "User %(username)s not found."
 msgstr "El usuario %(username)s no ha sido encontrado."
 
-#: app/main/routes.py:94
+#: app/main/routes.py:96
 msgid "You cannot follow yourself!"
 msgstr "¡No te puedes seguir a tí mismo!"
 
-#: app/main/routes.py:98
+#: app/main/routes.py:100
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "¡Ahora estás siguiendo a %(username)s!"
 
-#: app/main/routes.py:110
+#: app/main/routes.py:112
 msgid "You cannot unfollow yourself!"
 msgstr "¡No te puedes dejar de seguir a tí mismo!"
 
-#: app/main/routes.py:114
+#: app/main/routes.py:116
 #, python-format
 msgid "You are no longer following %(username)s!"
 msgstr "No estás siguiendo a %(username)s."
 
-#: app/main/routes.py:130 app/templates/base.html:45
+#: app/main/routes.py:132 app/templates/base.html:45
 msgid "Explore"
 msgstr "Explorar"
 
@@ -162,11 +166,11 @@ msgstr "Traducir"
 msgid "Error: Could not contact server."
 msgstr "Error: No se pudo contactar con el servidor."
 
-#: app/templates/base.html:49
+#: app/templates/base.html:58
 msgid "Login"
 msgstr "Ingresar"
 
-#: app/templates/base.html:52
+#: app/templates/base.html:61
 msgid "Logout"
 msgstr "Salir"
 
@@ -182,6 +186,18 @@ msgstr "Artículos siguientes"
 #: app/templates/index.html:25 app/templates/user.html:45
 msgid "Older Posts"
 msgstr "Artículos previos"
+
+#: app/templates/search.html:4
+msgid "Search Results"
+msgstr "Resultados de la búsqueda"
+
+#: app/templates/search.html:13
+msgid "Previous results"
+msgstr "Resultados Previos"
+
+#: app/templates/search.html:18
+msgid "Next results"
+msgstr "Próximos Resultados"
 
 #: app/templates/user.html:7
 msgid "User"
