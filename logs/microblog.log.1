@@ -1,4 +1,116 @@
-2019-02-23 21:19:40,626 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-02-25 23:34:00,892 ERROR: Exception on / [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\microblog\app\main\routes.py", line 19, in before_request
+    db.session.commit()
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
+    self.transaction.commit()
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
+    fn(*args, **kw)
+  File "C:\microblog\app\models.py", line 33, in after_commit
+    for obj in session._changes['add']:
+TypeError: 'NoneType' object is not subscriptable
+2019-02-25 23:37:06,851 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:37:09,416 ERROR: Exception on / [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\microblog\app\main\routes.py", line 19, in before_request
+    db.session.commit()
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
+    self.transaction.commit()
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
+    fn(*args, **kw)
+  File "C:\microblog\app\models.py", line 113, in after_commit
+    for obj in session._changes['add']:
+TypeError: 'NoneType' object is not subscriptable
+2019-02-25 23:37:16,353 ERROR: Exception on / [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\microblog\app\main\routes.py", line 19, in before_request
+    db.session.commit()
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
+    self.transaction.commit()
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
+    fn(*args, **kw)
+  File "C:\microblog\app\models.py", line 113, in after_commit
+    for obj in session._changes['add']:
+TypeError: 'NoneType' object is not subscriptable
+2019-02-25 23:37:18,289 ERROR: Exception on /favicon.ico [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\microblog\app\main\routes.py", line 19, in before_request
+    db.session.commit()
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
+    self.transaction.commit()
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "c:\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
+    fn(*args, **kw)
+  File "C:\microblog\app\models.py", line 113, in after_commit
+    for obj in session._changes['add']:
+TypeError: 'NoneType' object is not subscriptable
+2019-02-25 23:40:51,346 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:42:42,854 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:42:54,300 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:43:04,660 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -16,9 +128,9 @@ Traceback (most recent call last):
     return func(*args, **kwargs)
   File "C:\microblog\app\main\routes.py", line 145, in search
     posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
-  File "C:\microblog\app\models.py", line 93, in search
+  File "C:\microblog\app\models.py", line 95, in search
     ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "C:\microblog\app\search.py", line 27, in query_index
+  File "C:\microblog\app\search.py", line 26, in query_index
     'from': (page - 1) * per_page, 'size': per_page})
   File "c:\microblog\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
     return func(*args, params=params, **kwargs)
@@ -30,73 +142,4 @@ Traceback (most recent call last):
     self._raise_error(response.status, raw_data)
   File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\base.py", line 125, in _raise_error
     raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
-elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution_exception', 'failed to create query: {\n  "multi_match" : {\n    "query" : "love",\n    "fields" : [\n      "*^1.0"\n    ],\n    "type" : "best_fields",\n    "operator" : "OR",\n    "slop" : 0,\n    "prefix_length" : 0,\n    "max_expansions" : 50,\n    "zero_terms_query" : "NONE",\n    "auto_generate_synonyms_phrase_query" : true,\n    "fuzzy_transpositions" : true,\n    "boost" : 1.0\n  }\n}')
-2019-02-23 21:21:19,139 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 21:21:25,369 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\microblog\app\main\routes.py", line 145, in search
-    posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
-  File "C:\microblog\app\models.py", line 93, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "C:\microblog\app\search.py", line 27, in query_index
-    'from': (page - 1) * per_page, 'size': per_page})
-  File "c:\microblog\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
-    return func(*args, params=params, **kwargs)
-  File "c:\microblog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 660, in search
-    doc_type, '_search'), params=params, body=body)
-  File "c:\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 318, in perform_request
-    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
-  File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 186, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\base.py", line 125, in _raise_error
-    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
-elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution_exception', 'failed to create query: {\n  "multi_match" : {\n    "query" : "love",\n    "fields" : [\n      "*^1.0"\n    ],\n    "type" : "best_fields",\n    "operator" : "OR",\n    "slop" : 0,\n    "prefix_length" : 0,\n    "max_expansions" : 50,\n    "zero_terms_query" : "NONE",\n    "auto_generate_synonyms_phrase_query" : true,\n    "fuzzy_transpositions" : true,\n    "boost" : 1.0\n  }\n}')
-2019-02-23 21:24:51,871 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 21:25:33,858 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\microblog\app\main\routes.py", line 145, in search
-    posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
-  File "C:\microblog\app\models.py", line 93, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "C:\microblog\app\search.py", line 27, in query_index
-    'from': (page - 1) * per_page, 'size': per_page})
-  File "c:\microblog\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
-    return func(*args, params=params, **kwargs)
-  File "c:\microblog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 660, in search
-    doc_type, '_search'), params=params, body=body)
-  File "c:\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 318, in perform_request
-    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
-  File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 186, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\base.py", line 125, in _raise_error
-    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
-elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution_exception', 'failed to create query: {\n  "multi_match" : {\n    "query" : "love",\n    "fields" : [\n      "*^1.0"\n    ],\n    "type" : "best_fields",\n    "operator" : "OR",\n    "slop" : 0,\n    "prefix_length" : 0,\n    "max_expansions" : 50,\n    "zero_terms_query" : "NONE",\n    "auto_generate_synonyms_phrase_query" : true,\n    "fuzzy_transpositions" : true,\n    "boost" : 1.0\n  }\n}')
-2019-02-23 21:26:18,550 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution_exception', 'failed to create query: {\n  "multi_match" : {\n    "query" : "test",\n    "fields" : [\n      "*^1.0"\n    ],\n    "type" : "best_fields",\n    "operator" : "OR",\n    "slop" : 0,\n    "prefix_length" : 0,\n    "max_expansions" : 50,\n    "zero_terms_query" : "NONE",\n    "auto_generate_synonyms_phrase_query" : true,\n    "fuzzy_transpositions" : true,\n    "boost" : 1.0\n  }\n}')

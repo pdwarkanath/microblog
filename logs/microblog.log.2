@@ -1,4 +1,4 @@
-2019-02-23 21:04:40,113 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-02-23 21:26:22,582 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -21,8 +21,8 @@ Traceback (most recent call last):
   File "C:\microblog\app\search.py", line 29, in query_index
     ids = [int(hit['_id']) for hit in search['hits']['hits']]
 KeyError: 'hits'
-2019-02-23 21:08:53,507 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 21:16:58,038 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-02-23 21:28:33,306 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:28:40,764 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -45,7 +45,10 @@ Traceback (most recent call last):
   File "C:\microblog\app\search.py", line 29, in query_index
     ids = [int(hit['_id']) for hit in search['hits']['hits']]
 KeyError: 'hits'
-2019-02-23 21:17:03,224 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-02-23 21:34:15,608 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:35:42,411 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:36:15,500 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:36:21,165 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -68,7 +71,10 @@ Traceback (most recent call last):
   File "C:\microblog\app\search.py", line 29, in query_index
     ids = [int(hit['_id']) for hit in search['hits']['hits']]
 KeyError: 'hits'
-2019-02-23 21:17:10,626 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-02-23 21:36:33,043 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:36:48,953 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:36:57,096 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:37:13,274 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -91,29 +97,26 @@ Traceback (most recent call last):
   File "C:\microblog\app\search.py", line 29, in query_index
     ids = [int(hit['_id']) for hit in search['hits']['hits']]
 KeyError: 'hits'
-2019-02-23 21:17:52,054 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 21:18:08,268 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 21:18:24,455 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\microblog\app\main\routes.py", line 145, in search
-    posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
-  File "C:\microblog\app\models.py", line 93, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "C:\microblog\app\search.py", line 29, in query_index
-    ids = [int(hit['_id']) for hit in search['hits']['hits']]
-KeyError: 'hits'
-2019-02-23 21:19:32,509 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:37:55,987 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:39:02,015 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:39:27,749 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:40:17,389 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:44:23,675 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:48:20,860 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:56:48,270 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 22:00:40,359 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 22:02:55,914 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 22:06:20,280 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:03:40,764 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:07:18,169 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:07:24,070 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:07:36,758 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:11:46,622 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:18:41,026 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:19:43,273 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:28:42,229 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:28:47,858 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:28:51,206 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:30:14,884 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:30:14,884 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-25 23:33:42,949 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]

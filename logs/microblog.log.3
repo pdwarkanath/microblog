@@ -1,62 +1,4 @@
-2019-02-05 03:29:19,920 ERROR: Exception on / [POST] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\microblog\app\routes.py", line 20, in index
-    language = translate_client.detect_language(form.post.data)[0]['language']
-KeyError: 0
-2019-02-05 03:30:01,262 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-05 03:31:26,544 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-05 03:36:02,416 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-05 03:37:20,460 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-05 03:37:57,514 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-05 03:39:34,591 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 01:32:06,105 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 01:34:03,521 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 01:44:07,508 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:37:20,871 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:40:59,737 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:42:48,902 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:43:45,897 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:44:49,218 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:46:44,517 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:47:44,841 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:47:50,351 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:49:38,201 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:49:58,068 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-12 02:52:48,564 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-17 18:10:07,268 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-17 18:18:47,028 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-17 18:32:01,234 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-17 18:36:53,833 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-17 18:37:53,817 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-17 18:42:17,202 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-17 18:44:20,298 INFO: Microblog startup [in C:\microblog\app\__init__.py:58]
-2019-02-20 01:36:16,513 INFO: Microblog startup [in C:\microblog\app\__init__.py:73]
-2019-02-20 01:36:21,815 INFO: Microblog startup [in C:\microblog\app\__init__.py:73]
-2019-02-20 01:37:57,348 INFO: Microblog startup [in C:\microblog\app\__init__.py:73]
-2019-02-20 01:38:05,631 INFO: Microblog startup [in C:\microblog\app\__init__.py:73]
-2019-02-20 19:29:36,151 INFO: Microblog startup [in C:\microblog\app\__init__.py:73]
-2019-02-20 19:34:34,614 INFO: Microblog startup [in C:\microblog\app\__init__.py:73]
-2019-02-20 19:40:45,722 INFO: Microblog startup [in C:\microblog\app\__init__.py:73]
-2019-02-20 21:27:20,960 INFO: Microblog startup [in C:\microblog\app\__init__.py:73]
-2019-02-23 20:42:21,633 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 20:42:31,205 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 20:48:29,017 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 20:48:35,632 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 20:48:54,201 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-02-23 21:19:40,626 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -76,11 +18,21 @@ Traceback (most recent call last):
     posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
   File "C:\microblog\app\models.py", line 93, in search
     ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "C:\microblog\app\search.py", line 25, in query_index
-    doc_type = index, id = model.id,
-NameError: name 'model' is not defined
-2019-02-23 20:51:31,551 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 20:51:48,883 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+  File "C:\microblog\app\search.py", line 27, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution_exception', 'failed to create query: {\n  "multi_match" : {\n    "query" : "love",\n    "fields" : [\n      "*^1.0"\n    ],\n    "type" : "best_fields",\n    "operator" : "OR",\n    "slop" : 0,\n    "prefix_length" : 0,\n    "max_expansions" : 50,\n    "zero_terms_query" : "NONE",\n    "auto_generate_synonyms_phrase_query" : true,\n    "fuzzy_transpositions" : true,\n    "boost" : 1.0\n  }\n}')
+2019-02-23 21:21:19,139 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:21:25,369 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -100,11 +52,21 @@ Traceback (most recent call last):
     posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
   File "C:\microblog\app\models.py", line 93, in search
     ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "C:\microblog\app\search.py", line 29, in query_index
-    ids = [int(hit['_id']) for hit in search['hits']['hits']]
-KeyError: 'hits'
-2019-02-23 20:59:05,874 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 20:59:21,876 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+  File "C:\microblog\app\search.py", line 27, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution_exception', 'failed to create query: {\n  "multi_match" : {\n    "query" : "love",\n    "fields" : [\n      "*^1.0"\n    ],\n    "type" : "best_fields",\n    "operator" : "OR",\n    "slop" : 0,\n    "prefix_length" : 0,\n    "max_expansions" : 50,\n    "zero_terms_query" : "NONE",\n    "auto_generate_synonyms_phrase_query" : true,\n    "fuzzy_transpositions" : true,\n    "boost" : 1.0\n  }\n}')
+2019-02-23 21:24:51,871 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-02-23 21:25:33,858 ERROR: Exception on /search [GET] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -124,10 +86,17 @@ Traceback (most recent call last):
     posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
   File "C:\microblog\app\models.py", line 93, in search
     ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "C:\microblog\app\search.py", line 29, in query_index
-    ids = [int(hit['_id']) for hit in search['hits']['hits']]
-KeyError: 'hits'
-2019-02-23 21:03:02,477 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 21:03:23,516 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 21:04:21,845 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
-2019-02-23 21:04:26,634 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+  File "C:\microblog\app\search.py", line 27, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "c:\microblog\venv\lib\site-packages\elasticsearch\connection\base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution_exception', 'failed to create query: {\n  "multi_match" : {\n    "query" : "love",\n    "fields" : [\n      "*^1.0"\n    ],\n    "type" : "best_fields",\n    "operator" : "OR",\n    "slop" : 0,\n    "prefix_length" : 0,\n    "max_expansions" : 50,\n    "zero_terms_query" : "NONE",\n    "auto_generate_synonyms_phrase_query" : true,\n    "fuzzy_transpositions" : true,\n    "boost" : 1.0\n  }\n}')
+2019-02-23 21:26:18,550 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]

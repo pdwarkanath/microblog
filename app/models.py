@@ -10,6 +10,8 @@ from app.search import add_to_index, remove_from_index, query_index
 
 
 
+
+
 followers = db.Table('followers',
 	db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
 	db.Column('followed_id', db.Integer, db.ForeignKey('user.id')))
@@ -95,9 +97,10 @@ class SearchableMixin(object):
 			return cls.query.filter_by(id = 0), 0
 		when = []
 		for i, idx in enumerate(ids):
-			when.append(idx, i)
+			when.append((idx, i))
 		return cls.query.filter(cls.id.in_(ids)).order_by(db.case(when, value = cls.id)), total
-
+		#return cls.query.filter(cls.id.in_(ids)).order_by(db.case(when, value = cls.id)), total
+	
 	@classmethod
 	def before_commit(cls, session):
 		session._changes = {
@@ -118,20 +121,28 @@ class SearchableMixin(object):
 			if isinstance(obj, SearchableMixin):
 				remove_from_index(obj.__tablename__, obj)
 		session._changes = None
-
+	
 	@classmethod
 	def reindex(cls):
 		for obj in cls.query:
 			add_to_index(cls.__tablename__, obj)
 
 
+
+db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
+db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
+
+
+
+
 class Post(SearchableMixin, db.Model):
+	__searchable__ = ['body']
 	id = db.Column(db.Integer, primary_key=True)
 	body = db.Column(db.String(140))
 	timestamp =db.Column(db.DateTime, index=True, default=datetime.utcnow)
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 	language = db.Column(db.String(5))
-	__searchable__ = ['body']
+	
 	
 	def __repr__(self):
 		return '<Post {}>'.format(self.body)
@@ -141,10 +152,6 @@ class Post(SearchableMixin, db.Model):
 def load_user(id):
 	return User.query.get(int(id))
 
-
-
-db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
-db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
 
 
 
