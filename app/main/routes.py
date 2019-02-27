@@ -26,10 +26,12 @@ def before_request():
 def index():
 	form = PostForm()
 	if form.validate_on_submit():
-		translate_client = translate.Client()
-		language = translate_client.detect_language(form.post.data)['language']
-		if language == 'UNKNOWN' or len(language) > 5:
+		if 'GOOGLE_APPLICATION_CREDENTIALS' not in current_app.config or not current_app.config['GOOGLE_APPLICATION_CREDENTIALS']:
 			language = ''
+		else:
+			translate_client = translate.Client()
+			language = translate_client.detect_language(form.post.data)['language']
+			
 		post = Post(body = form.post.data, author=current_user)
 		post.language = language
 		db.session.add(post)
