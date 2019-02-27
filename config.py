@@ -17,8 +17,9 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     
     ADMINS = ['splashprabhu@gmail.com']
-
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
     GOOGLE_APPLICATION_CREDENTIALS = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
     POSTS_PER_PAGE = 3
     LANGUAGES = ['en', 'es']
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+    
