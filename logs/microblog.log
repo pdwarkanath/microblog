@@ -74,3 +74,4 @@ Traceback (most recent call last):
   File "c:\microblog\venv\lib\site-packages\google\auth\_default.py", line 89, in _load_credentials_from_file
     'File {} was not found.'.format(filename))
 google.auth.exceptions.DefaultCredentialsError: File microblog-53e8b5e2a8f3.json was not found.
+2019-03-07 18:23:01,043 INFO: Microblog startup [in C:\microblog\app\__init__.py:84]
