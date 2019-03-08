@@ -44,3 +44,33 @@ elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution
 2019-02-26 01:02:56,543 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
 2019-02-26 01:04:19,474 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
 2019-02-26 01:07:18,325 INFO: Microblog startup [in C:\microblog\app\__init__.py:79]
+2019-03-07 18:01:51,386 INFO: Microblog startup [in C:\microblog\app\__init__.py:84]
+2019-03-07 18:02:39,809 ERROR: Exception on / [POST] [in c:\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\microblog\app\main\routes.py", line 32, in index
+    translate_client = translate.Client()
+  File "c:\microblog\venv\lib\site-packages\google\cloud\translate_v2\client.py", line 64, in __init__
+    super(Client, self).__init__(credentials=credentials, _http=_http)
+  File "c:\microblog\venv\lib\site-packages\google\cloud\client.py", line 130, in __init__
+    credentials, _ = google.auth.default()
+  File "c:\microblog\venv\lib\site-packages\google\auth\_default.py", line 294, in default
+    credentials, project_id = checker()
+  File "c:\microblog\venv\lib\site-packages\google\auth\_default.py", line 165, in _get_explicit_environ_credentials
+    os.environ[environment_vars.CREDENTIALS])
+  File "c:\microblog\venv\lib\site-packages\google\auth\_default.py", line 89, in _load_credentials_from_file
+    'File {} was not found.'.format(filename))
+google.auth.exceptions.DefaultCredentialsError: File microblog-53e8b5e2a8f3.json was not found.
